@@ -376,7 +376,7 @@ async def adminslist(ctx):
 
     text = "👑 **Bot Admins**\\n\\n"
 
-"
+
 
     for admin in admins:
         text += f"• `{admin}`\\n"
