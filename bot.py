@@ -38,7 +38,7 @@ import instaloader
 # CONFIG
 # ============================================================
 
-TOKEN = "MTUwNzQ3Nzc1NTk4ODU0NTU3OA.GzzNIj.Q9eoVycSeKht4FFX2HOpCBdYd995Vg3HiX-Mec"
+TOKEN = os.getenv("TOKEN")
 ALERT_CHANNEL_ID = 1507480464519331840
 
 intents = discord.Intents.default()
@@ -52,7 +52,7 @@ bot = commands.Bot(command_prefix='!', intents=intents)
 
 tracked_accounts = {}
 admins = set()
-OWNER_ID = 1433932182979874949 # Your Discord User ID
+OWNER_ID = int(os.getenv("OWNER_ID")) # Your Discord User ID
 monitoring_tasks = {}
 alert_history = {}
 
