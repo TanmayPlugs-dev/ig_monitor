@@ -374,12 +374,12 @@ async def adminslist(ctx):
     if not is_owner(ctx.author.id):
         return await ctx.send("❌ Only owner can view admins")
 
-    text = "👑 **Bot Admins**
+    text = "👑 **Bot Admins**\\n\\n"
 
 "
 
     for admin in admins:
-        text += f"• `{admin}`
+        text += f"• `{admin}`\\n"
 "
 
     await ctx.send(text)
@@ -434,9 +434,7 @@ async def monitor(ctx, username):
     if risk_data['reasons']:
         embed.add_field(
             name="Risk Reasons",
-            value='
-'.join([f'• {x}' for x in risk_data['reasons'][:5]]),
-            inline=False
+            value='\\n'.join([f'• {x}' for x in risk_data['reasons'][:5]]),
         )
 
     await msg.edit(content='', embed=embed)
